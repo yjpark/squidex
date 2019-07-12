@@ -5,6 +5,7 @@
  * Copyright (c) Squidex UG (haftungsbeschränkt). All rights reserved.
  */
 
+import {OverlayModule} from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
@@ -58,9 +59,8 @@ import {
     LoadingService,
     LocalStoreService,
     MessageBus,
+    ModalComponent,
     ModalDialogComponent,
-    ModalTargetDirective,
-    ModalViewDirective,
     MoneyPipe,
     MonthPipe,
     OnboardingService,
@@ -72,7 +72,6 @@ import {
     PopupLinkDirective,
     ProgressBarComponent,
     ResourceLoaderService,
-    RootViewComponent,
     SafeHtmlPipe,
     ScrollActiveDirective,
     ShortcutComponent,
@@ -93,10 +92,11 @@ import {
 
 @NgModule({
     imports: [
-        FormsModule,
+        ColorPickerModule,
         CommonModule,
-        ReactiveFormsModule,
-        ColorPickerModule
+        FormsModule,
+        OverlayModule,
+        ReactiveFormsModule
     ],
     declarations: [
         AutocompleteComponent,
@@ -136,9 +136,8 @@ import {
         KeysPipe,
         KNumberPipe,
         LightenPipe,
+        ModalComponent,
         ModalDialogComponent,
-        ModalTargetDirective,
-        ModalViewDirective,
         MoneyPipe,
         MonthPipe,
         OnboardingTooltipComponent,
@@ -148,7 +147,6 @@ import {
         ParentLinkDirective,
         PopupLinkDirective,
         ProgressBarComponent,
-        RootViewComponent,
         SafeHtmlPipe,
         ScrollActiveDirective,
         ShortcutComponent,
@@ -204,9 +202,8 @@ import {
         KeysPipe,
         KNumberPipe,
         LightenPipe,
+        ModalComponent,
         ModalDialogComponent,
-        ModalTargetDirective,
-        ModalViewDirective,
         MoneyPipe,
         MonthPipe,
         OnboardingTooltipComponent,
@@ -217,7 +214,6 @@ import {
         PopupLinkDirective,
         ProgressBarComponent,
         ReactiveFormsModule,
-        RootViewComponent,
         SafeHtmlPipe,
         ScrollActiveDirective,
         ShortcutComponent,

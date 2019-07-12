@@ -44,6 +44,18 @@
     }
 }
 
+.cdk-overlay-pane {
+    .dropdown-menu {
+        display: block;
+        position: static;
+    }
+}
+
+.cdk-overlay-container,
+.cdk-overlay-pane {
+    z-index: 1000000;
+}
+
 // 
 // Alert overrides.
 //

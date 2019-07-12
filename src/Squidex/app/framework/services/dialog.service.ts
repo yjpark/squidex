@@ -38,7 +38,8 @@ export class Tooltip {
     constructor(
         public readonly target: any,
         public readonly text: string | null,
-        public readonly position: string
+        public readonly xPosition: string,
+        public readonly yPosition: string
     ) {
     }
 }

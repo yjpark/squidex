@@ -44,8 +44,8 @@
                         </sqx-content-status>
                     </button>
 
-                    <ng-container *ngIf="content.isPending || !schema.isSingleton">
-                        <div class="dropdown-menu" *sqxModalView="dropdown;closeAlways:true" [sqxModalTarget]="optionsButton" @fade>
+                    <sqx-modal *ngIf="content.isPending || !schema.isSingleton" [model]="dropdown" [target]="optionsButton" closeAlways="true">
+                        <div class="dropdown-menu" @fade>
                             <a class="dropdown-item" (click)="discardChanges()" *ngIf="content.canDraftDiscard">
                                 Discard changes
                             </a>
@@ -72,7 +72,7 @@
                                 </a>
                             </ng-container>
                         </div>
-                    </ng-container>
+                    </sqx-modal>
                 </div>
                 
                 <button type="button" class="btn btn-secondary ml-1" (click)="saveAsDraft()" *ngIf="content.canDraftPropose">
@@ -114,11 +114,11 @@
 
         <ng-container sidebar>
             <div class="panel-nav">
-                <a class="panel-link" routerLink="comments" routerLinkActive="active" title="Comments" titlePosition="left">
+                <a class="panel-link" routerLink="comments" routerLinkActive="active" title="Comments" titleXPosition="left-out" titleYPosition="center">
                     <i class="icon-comments"></i>
                 </a>
 
-                <a class="panel-link" routerLink="history" routerLinkActive="active" title="History" titlePosition="left" #historyLink>
+                <a class="panel-link" routerLink="history" routerLinkActive="active" title="History" titleXPosition="left-out" titleYPosition="center" #historyLink>
                     <i class="icon-time"></i>
                 </a>
 

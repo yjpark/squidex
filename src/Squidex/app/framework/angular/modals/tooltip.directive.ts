@@ -18,7 +18,10 @@ export class TooltipDirective {
     private titleText: string;
 
     @Input()
-    public titlePosition = 'top-right';
+    public titleYPosition = 'top';
+
+    @Input()
+    public titleXPosition = 'right';
 
     @Input()
     public set title(value: string) {
@@ -37,14 +40,14 @@ export class TooltipDirective {
     @HostListener('mouseenter')
     public onMouseEnter() {
         if (this.titleText) {
-            this.dialogs.tooltip(new Tooltip(this.element.nativeElement, this.titleText, this.titlePosition));
+            this.dialogs.tooltip(new Tooltip(this.element.nativeElement, this.titleText, this.titleXPosition, this.titleYPosition));
         }
     }
 
     @HostListener('mouseleave')
     public onMouseLeave() {
         if (this.titleText) {
-            this.dialogs.tooltip(new Tooltip(this.element.nativeElement, null, this.titlePosition));
+            this.dialogs.tooltip(new Tooltip(this.element.nativeElement, null, this.titleXPosition, this.titleYPosition));
         }
     }
 

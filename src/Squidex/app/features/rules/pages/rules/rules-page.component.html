@@ -67,8 +67,8 @@
                 </tbody>
             </table>
 
-            <ng-container *sqxModalView="addRuleDialog;onRoot:true;closeAuto:false">
-                <sqx-rule-wizard 
+            <sqx-modal [model]="addRuleDialog">
+                 <sqx-rule-wizard 
                     [schemas]="schemasState.schemas | async"
                     [rule]="wizardRule"
                     [ruleActions]="ruleActions"
@@ -76,19 +76,19 @@
                     [mode]="wizardMode"
                     (complete)="addRuleDialog.hide()">
                 </sqx-rule-wizard>
-            </ng-container>
+            </sqx-modal>
         </ng-container>
     </ng-container>
 
     <ng-container sidebar>
         <div class="panel-nav">
             <ng-container *ngIf="rulesState.canReadEvents | async">
-                <a class="panel-link panel-link-gray" routerLink="events" routerLinkActive="active" title="History" titlePosition="left">
+                <a class="panel-link panel-link-gray" routerLink="events" routerLinkActive="active" title="History" titleXPosition="left-out" titleYPosition="center">
                     <i class="icon-time"></i>
                 </a>
             </ng-container>
 
-            <a class="panel-link" routerLink="help" routerLinkActive="active" title="Help" titlePosition="left" #helpLink>
+            <a class="panel-link" routerLink="help" routerLinkActive="active" title="Help" titleXPosition="left-out" titleYPosition="center" #helpLink>
                 <i class="icon-help"></i>
             </a>
 

@@ -36,7 +36,10 @@ export class OnboardingTooltipComponent extends StatefulComponent implements OnD
     public after = 1000;
 
     @Input()
-    public position = 'left';
+    public yPosition = 'center';
+
+    @Input()
+    public xPosition = 'left';
 
     public tooltipModal = new ModalModel();
 
@@ -57,8 +60,8 @@ export class OnboardingTooltipComponent extends StatefulComponent implements OnD
     public ngOnInit() {
         if (this.for && this.helpId && Types.isFunction(this.for.addEventListener)) {
             this.own(
-                timer(this.after).subscribe(() => {
-                    if (this.onboardingService.shouldShow(this.helpId)) {
+                timer(2000).subscribe(() => {
+                    if (this.onboardingService.shouldShow(this.helpId) || true) {
                         const forRect = this.for.getBoundingClientRect();
 
                         const x = forRect.left + 0.5 * forRect.width;
