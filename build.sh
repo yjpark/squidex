@@ -5,7 +5,8 @@ docker build . -t squidex-build-image -f Dockerfile.build
 docker create --name squidex-build-container squidex-build-image
 
 # Copy the output to the host file system
-docker cp squidex-build-container:/out ./publish
+DATE=$(date -u +%Y%m%d)_$(date -u +%H%M%S)
+docker cp squidex-build-container:/out ./publish_${DATE}
 
 # Cleanup
 docker rm squidex-build-container

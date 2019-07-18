@@ -23,7 +23,7 @@ namespace Squidex.Areas.Api.Controllers.Schemas.Models
         /// The name of the field. Must be unique within the schema.
         /// </summary>
         [Required]
-        [RegularExpression("^[a-z0-9]+(\\-[a-z0-9]+)*$")]
+        [RegularExpression("^[_a-z0-9]+([_\\-][a-z0-9]+)*$")]
         public string Name { get; set; }
 
         /// <summary>
