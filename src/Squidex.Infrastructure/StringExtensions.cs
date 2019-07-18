@@ -19,7 +19,7 @@ namespace Squidex.Infrastructure
 
         private static readonly Regex SlugRegex = new Regex("^[a-z0-9]+(\\-[a-z0-9]+)*$", RegexOptions.Compiled);
         private static readonly Regex EmailRegex = new Regex("^[a-zA-Z0-9.!#$%&’*+\\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$", RegexOptions.Compiled);
-        private static readonly Regex PropertyNameRegex = new Regex("^[_a-zA-Z0-9]+(\\-[_a-zA-Z0-9]+)*$", RegexOptions.Compiled);
+        private static readonly Regex PropertyNameRegex = new Regex("^[_a-zA-Z0-9]+([_\\-][a-zA-Z0-9]+)*$", RegexOptions.Compiled);
 
         private static readonly Dictionary<char, string> LowerCaseDiacritics;
         private static readonly Dictionary<char, string> Diacritics = new Dictionary<char, string>

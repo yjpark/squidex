@@ -195,7 +195,7 @@ export class AddFieldForm extends Form<FormGroup, AddFieldDto> {
                 [
                     Validators.required,
                     Validators.maxLength(40),
-                    ValidatorsEx.pattern('[_a-zA-Z0-9]+(\\-[_a-zA-Z0-9]+)*', 'Name must be a valid javascript name in camel case.')
+                    ValidatorsEx.pattern('[_a-zA-Z0-9]+([_\\-][a-zA-Z0-9]+)*', 'Name must be a valid javascript name in camel case.')
                 ]
             ],
             isLocalizable: false
